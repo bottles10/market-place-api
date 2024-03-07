@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   
   # Api definition
   namespace :api, defaults: { format: :json } do
-    # Listing resources here
+    namespace :v1 do
+      # Listing resources here
+    end
   end
-
 end
