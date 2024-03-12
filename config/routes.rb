@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       # Listing resources here
       resources :users, only: [:show, :create, :update, :destroy]
       resources :tokens, only: [:create]
+      resources :products, only: [:index, :show]
     end
   end
 end
