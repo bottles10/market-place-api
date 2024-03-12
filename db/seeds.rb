@@ -9,7 +9,7 @@
 #   end
 
 
-User.delete_all
+User.destroy_all
 
 
 user1 = User.create!(email: 'toto@toto.fr', password: 'toto123')
@@ -36,6 +36,13 @@ puts "Created a new user: #{user3.email}"
 puts "Created a new brand product: #{product5.title}"
 puts "Created a new brand product: #{product6.title}"
 
+user4 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password)
+product7 = user4.products.create!(title: Faker::Commerce.product_name, price: Faker::Commerce.price, published: true)
+product8 = user4.products.create!(title: Faker::Commerce.product_name, price: Faker::Commerce.price, published: false)
+
+puts "Created a new user: #{user4.email}"
+puts "Created a new brand product: #{product7.title}"
+puts "Created a new brand product: #{product8.title}"
 
 
 
